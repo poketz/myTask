@@ -15,3 +15,4 @@ for(let i = 0; i < score.length; i++) {
 }
 sum.innerHTML = `合計:${sumScore}`
 //平均の値も計算して,結果を「平均:{平均の数}」となるように表示してください
+ave.innerHTML = `平均:${sumScore / score.length}`
