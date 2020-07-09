@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>js2：計算機</title>
+</head>
+<body>
+    <!-- 採点で使うため,div,input,buttonのidは変更しないでください -->
+    <div>
+        <input type="text" id="id_textBox1">
+            <div id = "id_buttonContainer">
+                <div id="id_type">ここに符号を表示してください</div>
+                <button id="id_add" onclick="sign('+')">+</button>
+                <button id="id_sub" onclick="sign('-')">-</button>
+                <button id="id_mul" onclick="sign('×')">×</button>
+                <button id="id_div" onclick="sign('÷')">÷</button>
+            </div>
+    </div>
+    <div>
+        <input type="text" id="id_textBox2">
+        <button id="id_enter" onclick="run()">=</button>
+        <button id="id_reset" onclick="reset()">reset!</button>
+    </div>
+    <div id="id_answer">0</div>
+
+    <script src="main.js"></script>
+</body>
+</html>
