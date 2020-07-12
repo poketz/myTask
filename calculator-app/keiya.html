@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="input1" />
+    <div id="sign">ここに符号を表示してください</div>
+    <div>
+      <button id="add">+</button>
+      <button id="sub">-</button>
+      <button id="mul">×</button>
+      <button id="div">÷</button>
+    </div>
+    <input type="text" id="input2" />
+    <button id="eq">=</button>
+    <button id="reset">reset</button>
+    <div id="result"></div>
+
+    <script>
+      class Calculator {
+        constructor() {
+          this.selected = '';
+        }
+
+        select(s) {
+          this.selected = s;
+          document.getElementById('sign').innerHTML = s;
+        }
+
+        calc() {
+          const v1 = Number(document.getElementById('input1').value);
+          const v2 = Number(document.getElementById('input2').value);
+
+          if (v1 && v2) {
+            document.getElementById('result').innerHTML = {
+              '+': v1 + v2,
+              '-': v1 - v2,
+              '×': v1 * v2,
+              '÷': v1 / v2,
+            }[this.selected];
+          }
+        }
+
+        reset() {
+          this.selected = '';
+          document.getElementById('input1').value = '';
+          document.getElementById('input2').value = '';
+          document.getElementById('result').innerHTML = '';
+          document.getElementById('sign').innerHTML =
+            'ここに符号を表示してください';
+        }
+      }
+
+      const calc = new Calculator();
+      const setOnClick = (id, func) => {
+        document.getElementById(id).addEventListener('click', func);
+      };
+      setOnClick('add', () => calc.select('+'));
+      setOnClick('sub', () => calc.select('-'));
+      setOnClick('mul', () => calc.select('×'));
+      setOnClick('div', () => calc.select('÷'));
+      setOnClick('eq', () => calc.calc());
+      setOnClick('reset', () => calc.reset());
+    </script>
+  </body>
+</html>

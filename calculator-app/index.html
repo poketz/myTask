@@ -6,15 +6,15 @@
     <body>
         <input type="text" id="input1">
         <div id="selectSign">ここに符号を表示してください</div>
-        <button id="btn1">+</button>
-        <button id="btn2">-</button>
-        <button id="btn3">×</button>
-        <button id="btn4">÷</button>
+        <button id="btn1" onclick="hugou(0)">+</button>
+        <button id="btn2" onclick="hugou(1)">-</button>
+        <button id="btn3" onclick="hugou(2)">×</button>
+        <button id="btn4" onclick="hugou(3)">÷</button>
         <br>
         <input type="text" id="input2">
         <button onclick="test()">=</button>
-        <button>reset!</button>
-        <div>0</div>
+        <button onclick="reset()">reset!</button>
+        <div id="result">0</div>
         <script src="main.js"></script>
     </body>
 </html>
