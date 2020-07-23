@@ -26,3 +26,17 @@ class Circle extends Shape {
 
 let circle = new Circle("紫", "50");
 console.log(circle.area());
+
+class Rectangle extends Shape {
+  constructor(color, width, height) {
+    super(color, "長方形");
+    this.width = width;
+    this.height = height;
+  }
+  area() {
+    return this.width * this.height;
+  }
+}
+
+let rectangle = new Rectangle("グレー", "30", "100");
+console.log(rectangle.area());
